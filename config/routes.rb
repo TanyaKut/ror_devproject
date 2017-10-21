@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'posts/edit'
+
+  get 'posts/new'
+
+  get 'posts/_form'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
