@@ -2,10 +2,10 @@
 <p>This page is not create</p>
 
 <% if current_user.nil? %>
-<%= link_to "Registration", new_user_registration_path %> |
-<%= link_to "Sign up", user_session_path %>
+<%= link_to "Sign in", user_session_path %>
 <% else %>
 <%= link_to "Edit", edit_user_registration_path %> or <%= link_to "Exit", destroy_user_session_path, method: :delete %><br/>
-
+<hr>
+<%= link_to "Create Post", new_post_path %>
 
 <% end %>

@@ -1,2 +1,7 @@
-<h1>Posts#_form</h1>
-<p>Find me in app/views/posts/_form.html.erb</p>
+<%= f.label "Title" %>
+<%= f.text_field :title %>
+
+<%= f.label "Text" %>
+<%= f.text_area :body, rows:20, cols:40 %>
+
+<%f.submit "Save" %>
