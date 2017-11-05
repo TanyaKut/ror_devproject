@@ -1,17 +1,17 @@
-<span style="text-align: center;"><h1>WELCOME!</h1>
-
-<a href="/posts/new" class="btn btn-info" role="button" style="margin-left: 47%;">New Post</a>
-<table>
+<span style="text-align: center;">
+<a href="/posts/new" class="btn btn-info" role="button" style="margin-left: 45%;"><strong>CREATE NEW POST!</strong></a>
+</span>
 <% @posts.each do |post|%>
 
 <hr>
-<h2 style="color: #0772A1;"><%= post.title%></h2>
-<h3><%= post.body%></h3></br>
-Author: <%= post.user.nickname %> | <%= post.updated_at %></span>
+
+<h2 style="color: #0772A1; margin-left: 50px;">"<%= post.title%>"</h2>
+<h4 style="margin-left: 50px;"><%= post.body%></h4></br>
+<h6><b style="margin-left: 50px;">Author: <span style="color: green;"><%= post.user.nickname %></span> | <%= post.updated_at %></b></h6>
 <hr>
 
 <% if current_user != nil and current_user.id==post.user_id %>
-<p><%=link_to"Edit",edit_posts_path(post.id)%> | <%=link_to "Delete", posts_path(post.id), data: {confirm: "Are you shour?"}, method: :delete%></p>
+<p style="text-align: center;"><%=link_to"Edit",edit_posts_path(post.id)%> | <%=link_to "Delete", posts_path(post.id), data: {confirm: "Are you shour?"}, method: :delete%></p>
 <%end%>
 <% end %>
-</table></span>
+
