@@ -1,11 +1,18 @@
-<h1>WELCOME, user!</h1>
+<h1>WELCOME!</h1>
 <p>This page is not create</p>
 
-<% if current_user.nil? %>
-<%= link_to "Sign in", user_session_path %>
-<% else %>
-<%= link_to "Edit", edit_user_registration_path %> or <%= link_to "Exit", destroy_user_session_path, method: :delete %><br/>
-<hr>
-<%= link_to "Create Post", new_post_path %>
+<%= link_to "Create Post", new_posts_path %>
+<table>
+<% @posts.each do |post|%>
 
+<br/>Autor: <%= post.user.nickname %>
+<h2><%= post.title%></h2>
+<%= post.body%></br>
+<%= post.updated_at %>
+
+
+<% if current_user != nil and current_user.id==post.user_id %>
+<p><%=link_to"Edit",edit_posts_path(post.id)%> or <%=link_to "Delete", posts_path(post.id), data: {confirm: "Are you shour?"}, method: :delete%></p>
+<%end%>
 <% end %>
+</table>

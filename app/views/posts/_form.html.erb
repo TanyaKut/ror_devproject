@@ -1,7 +1,7 @@
-<%= f.label "Title" %>
-<%= f.text_field :title %>
+<div style="text-align: center;"><h3><%= f.label "Title" %></h3>
+<%= f.text_field :title %><br />
 
-<%= f.label "Text" %>
-<%= f.text_area :body, rows:20, cols:40 %>
+<h3><%= f.label "Text" %></h3>
+<%= f.text_area :body, rows:20, cols:10 %><br /></div>
 
-<%f.submit "Save" %>
+<div style="text-align: center;"><br /><%= f.submit "Save" %></div>

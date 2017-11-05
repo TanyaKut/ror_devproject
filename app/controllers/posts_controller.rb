@@ -12,20 +12,28 @@ before_action :set_post, only: [:edit, :destroy, :update]
   end
 
   def create
-  	@post = current_user.post.build(post_params)
+  	@post = current_user.posts.build(post_params)
   	if @post.save
-  		redirect_to root_to
+  		redirect_to root_path
   	else
   		render 'new'
   	end
   end
 
   def destroy
+        @post.destroy
+    redirect_to root_path
+  end
+
+  def update
+    @post.update(post_params)
+    redirect_to root_path
+    
   end
 
   private
   def post_params
-  	params.require(:post).premite(:user_id, :title, :body)
+  	params.require(:post).permit(:user_id, :title, :body)
   end
 
   def set_post

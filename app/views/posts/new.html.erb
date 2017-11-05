@@ -1,5 +1,5 @@
-<h1>Create new post!</h1>
-<% form_for :post, url:post_path do |f| %>
-<%= render 'posts/form', f:f %>
+<h1 style="text-align: center;">Create new post!</h1>
+<%=form_for :post, url:posts_path do |f| %>
+<%= render 'posts/form',f:f%>
 
 <% end %>
