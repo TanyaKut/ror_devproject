@@ -7,12 +7,12 @@
     <% if current_user.nil? %>
     <li>
     <%= link_to  user_session_path do%>
-      <i class="glyphicon glyphicon-log-in"></i> Sign in
+      <i class="glyphicon glyphicon-log-in" style="color: #0772A1;"></i> SIGN IN
       <%end%>
     </li>
 <% else %>
     <li><%= link_to  destroy_user_session_path, method: :delete do%>
-      <i class="glyphicon glyphicon-log-out"></i> Sign out
+      <i class="glyphicon glyphicon-log-out" style="color: #0772A1;">EXIT</i> 
       <%end%>
     </li>
       <%end%>

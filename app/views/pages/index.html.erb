@@ -1,18 +1,17 @@
-<h1>WELCOME!</h1>
-<p>This page is not create</p>
+<span style="text-align: center;"><h1>WELCOME!</h1>
 
-<%= link_to "Create Post", new_posts_path %>
+<a href="/posts/new" class="btn btn-info" role="button" style="margin-left: 47%;">New Post</a>
 <table>
 <% @posts.each do |post|%>
 
-<br/>Autor: <%= post.user.nickname %>
-<h2><%= post.title%></h2>
-<%= post.body%></br>
-<%= post.updated_at %>
-
+<hr>
+<h2 style="color: #0772A1;"><%= post.title%></h2>
+<h3><%= post.body%></h3></br>
+Author: <%= post.user.nickname %> | <%= post.updated_at %></span>
+<hr>
 
 <% if current_user != nil and current_user.id==post.user_id %>
-<p><%=link_to"Edit",edit_posts_path(post.id)%> or <%=link_to "Delete", posts_path(post.id), data: {confirm: "Are you shour?"}, method: :delete%></p>
+<p><%=link_to"Edit",edit_posts_path(post.id)%> | <%=link_to "Delete", posts_path(post.id), data: {confirm: "Are you shour?"}, method: :delete%></p>
 <%end%>
 <% end %>
-</table>
+</table></span>
