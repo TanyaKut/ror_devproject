@@ -1,9 +1,9 @@
-<h1><%= @post.title%></h1>
-<p><%= @post.body%></p>
+<div style="margin-left: 25px;"><h1>"<%= @post.title%>"</h1>
+<p><%= @post.body%></p></div>
 <hr>
 <% @comments.each do |comment|  %>
 <p style="margin-left: 50px;"><b>
-User <b style="color: green;"><%= comment.user.nickname %></b> write: 
+<%=image_tag @post.user.avatar.url(:thumb), width:30, height:30 %> User <b style="color: green;"><%= comment.user.nickname %></b> write: 
 </b></p>
 <span style="margin-left: 70px;"><%= comment.text %></span>
 <hr>

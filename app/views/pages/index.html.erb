@@ -7,7 +7,7 @@
 
 <h2 style="color: #0772A1; margin-left: 50px;">"<%=link_to post.title, post_path(post.id)%>"</h2>
 <h4 style="margin-left: 50px;"><%= post.body%></h4></br>
-<h6><b style="margin-left: 50px;">Author: <span style="color: green;"><%= post.user.nickname %></span> | <%= post.updated_at %></b></h6>
+<h6><b style="margin-left: 50px;"><%=image_tag post.user.avatar.url(:thumb), width:30, height:30 %>Author: <span style="color: green;"><%= post.user.nickname %></span> | <%= post.updated_at %></b></h6>
 <hr>
 
 <% if current_user != nil and current_user.id==post.user_id %>
