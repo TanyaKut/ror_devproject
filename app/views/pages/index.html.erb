@@ -5,13 +5,12 @@
 
 <hr>
 
-<h2 style="color: #0772A1; margin-left: 50px;">"<%= post.title%>"</h2>
+<h2 style="color: #0772A1; margin-left: 50px;">"<%=link_to post.title, post_path(post.id)%>"</h2>
 <h4 style="margin-left: 50px;"><%= post.body%></h4></br>
 <h6><b style="margin-left: 50px;">Author: <span style="color: green;"><%= post.user.nickname %></span> | <%= post.updated_at %></b></h6>
 <hr>
 
 <% if current_user != nil and current_user.id==post.user_id %>
-<p style="text-align: center;"><%=link_to"Edit",edit_posts_path(post.id)%> | <%=link_to "Delete", posts_path(post.id), data: {confirm: "Are you shour?"}, method: :delete%></p>
+<p style="text-align: center;"><%=link_to"Edit",edit_post_path(post.id)%> | <%=link_to "Delete", post_path(post.id), data: {confirm: "Are you shour?"}, method: :delete%></p>
 <%end%>
 <% end %>
-

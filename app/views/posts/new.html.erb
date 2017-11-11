@@ -1,5 +1,11 @@
-<h1 style="text-align: center; color: #0772A1;";">Create new post!</h1>
+<h1 style="text-align: center; color: #0772A1;">Create new post!</h1>
 <%=form_for :post, url:posts_path do |f| %>
+<%if @post.errors.any? %>
+<% @post.errors.full_messages.each do |msg| %>
+<li><%= msg%></li>
+<%end%>
+<%end%>
 <%= render 'posts/form',f:f%>
 
 <% end %>
+

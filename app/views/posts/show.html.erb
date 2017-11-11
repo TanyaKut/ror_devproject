@@ -1,0 +1,21 @@
+<h1><%= @post.title%></h1>
+<p><%= @post.body%></p>
+<hr>
+<% @comments.each do |comment|  %>
+<p style="margin-left: 50px;"><b>
+User <b style="color: green;"><%= comment.user.nickname %></b> write: 
+</b></p>
+<span style="margin-left: 70px;"><%= comment.text %></span>
+<hr>
+<% end %>
+
+
+<%= form_for :postcomment, url: post_postcomments_path(post_id: @post.id) do |f| %>
+
+<p><%= f.label "Write Comment" %></p>
+<%= f.text_area :text, cols: 10, rows: 5 %><br />
+
+<p><%= f.submit "Send"%></p>
+
+
+<%end%>

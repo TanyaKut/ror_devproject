@@ -1,4 +1,9 @@
 <%=form_for @post, method: :patch do |f| %>
+
+<%if @post.errors.any? %>
+<% @post.erorrs.full_messages.each do |msg| %>
+<li><%= msg%></li>
+<%end%>
 <%= render 'posts/form',f:f%>
 
 <% end %>
