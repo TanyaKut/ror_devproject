@@ -10,7 +10,11 @@
 <% end %>
 
 
-<%= form_for :postcomment, url: post_postcomments_path(post_id: @post.id) do |f| %>
+<%= form_for :postcomment, url:post_postcomments_path(post_id: @post.id) do |f| %>
+
+<% if flash[:notice] %>
+<div class="notice"> <%= flash[:notice] %> </div>
+<% end %>
 
 <p><%= f.label "Write Comment" %></p>
 <%= f.text_area :text, cols: 10, rows: 5 %><br />
@@ -19,3 +23,7 @@
 
 
 <%end%>
+
+
+
+

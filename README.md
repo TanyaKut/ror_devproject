@@ -22,3 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+this is a RoR project for my univ lessons (11) # post and comment

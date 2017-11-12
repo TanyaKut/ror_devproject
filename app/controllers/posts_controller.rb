@@ -29,7 +29,7 @@ before_action :set_post, only: [:edit, :destroy, :update, :show]
   end
 
   def show
-    @comments = Postcomment.where(post_id: @post.id)    
+     @comments = Postcomment.where(post_id: @post.id)
   end
 
   private
