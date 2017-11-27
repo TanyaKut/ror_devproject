@@ -1,12 +1,14 @@
 <span style="text-align: center;">
 <a href="/posts/new" class="btn btn-info" role="button" style="margin-left: 45%;"><strong>CREATE NEW POST!</strong></a>
+</br>
+<p><%= link_to "TO GALERY", photos_path, class: "btn btn-default"%></p>
 </span>
 <% @posts.each do |post|%>
 
 <hr>
 
 <h2 style="color: #0772A1; margin-left: 50px;">"<%=link_to post.title, post_path(post.id)%>"</h2>
-<h4 style="margin-left: 50px;"><%= post.body%></h4></br>
+<h4 style="margin-left: 50px;"><%= sanitize post.body%></h4></br>
 <h6><b style="margin-left: 50px;"><%=image_tag post.user.avatar.url(:thumb), width:30, height:30 %>Author: <span style="color: green;"><%= post.user.nickname %></span> | <%= post.updated_at %></b></h6>
 <hr>
 

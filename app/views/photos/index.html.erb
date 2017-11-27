@@ -1,0 +1,10 @@
+<%= link_to "Create new photo", new_photo_path, class: "btn btn-default"%>
+
+<% if @photos == [] %>
+ <p>Photo</p>
+ <% else %>
+ 	<% @photos.each do |photo| %>
+ 	 <%= image_tag(photo.photo_url) %>
+ 		<%= photo.name %>
+ 	<% end %>
+ <% end %>

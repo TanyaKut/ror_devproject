@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts
   has_many :postcomments
+  has_many :photos
 
          validates :password, confirmation: true
          validates :nickname, length: { maximum: 10 }

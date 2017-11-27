@@ -35,12 +35,18 @@ gem 'jbuilder', '~> 2.5'
 gem 'activeadmin'
 #
 gem 'devise'
-#
+#gem for Heroku
 gem 'pg'
-#
+#style gem
 gem 'bootstrap-sass'
 # Gem for avatar
 gem 'paperclip'
+#validation
+gem 'client_side_validations'
+#Editor
+gem 'tinymce-rails'
+#photoeditor
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

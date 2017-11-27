@@ -1,5 +1,5 @@
 <div style="margin-left: 25px;"><h1>"<%= @post.title%>"</h1>
-<p><%= @post.body%></p></div>
+<p><%= sanitize @post.body%></p></div>
 <hr>
 <% @comments.each do |comment|  %>
 <p style="margin-left: 50px;"><b>
