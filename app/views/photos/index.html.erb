@@ -1,13 +1,29 @@
-<%= link_to "Create new photo", new_photo_path, class: "btn btn-default"%>
 
+<div class="container-fluid text-center bg-grey">
+ <h2>Portfolio</h2>
+  <h4><%= link_to "Create new photo", new_photo_path, class: "btn btn-default"%></h4>
+ </div>
 <% if @photos == [] %>
  <p>Photo</p>
  <% else %>
  	<% @photos.each do |photo| %>
- 		<h3 style="color: #0772A1; margin-left: 50%;"><%= photo.name %></h3>
- 	<%= image_tag(photo.photo_url) %>
+ 	
+ 		<div class="container-fluid text-center bg-grey" style="display: inline-block;">
+  <div>
+    <div>
+      <div class="thumbnail">
+        <%= image_tag(photo.photo_url, width: 300, height: 200) %>
+        <p><strong><h3 style="color: #0772A1;">
+        <b><%= photo.name %></b>
+        </h3></strong></p>
+        <p>Category: <b><%= photo.category.name %></b> | Author: <span style="color: green;"><%= photo.user.nickname %></span></p>
+        <%= link_to "Like", vote_photo_path(photo.id) %> (<%= @like[photo.id]%>)
+      </div>
+     </div>
+    </div>
+    </div>
+</div>
  	<% end %>
  <% end %>
 
 
- 

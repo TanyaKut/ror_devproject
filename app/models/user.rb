@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :postcomments
   has_many :photos
+  has_many :votes
 
          validates :password, confirmation: true
          validates :nickname, length: { maximum: 10 }
